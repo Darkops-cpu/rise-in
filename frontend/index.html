@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TossBet - Fair Odds Coin Toss</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/@stellar/stellar-sdk/dist/stellar-sdk.min.js"></script>
+  </head>
+  <body>
+    <div class="background-circles"></div>
+    <main class="container">
+      <section class="card glass">
+        <div class="header">
+          <div class="top-bar">
+            <button id="connectWalletBtn" class="secondary-btn">CONNECT WALLET</button>
+            <div id="walletAddress" class="wallet-pill hidden"></div>
+          </div>
+          <h1>TossBet</h1>
+          <p class="subtitle">Decentralized Luck, Instant Win</p>
+        </div>
+
+        <div class="bet-controls">
+          <div class="field">
+            <label for="betAmount">Bet Amount (XLM)</label>
+            <input id="betAmount" type="number" min="0.1" step="0.1" value="1.0" />
+          </div>
+
+          <div class="choice-selector">
+            <button id="choiceHeads" class="choice-btn active" data-choice="heads">HEADS</button>
+            <button id="choiceTails" class="choice-btn" data-choice="tails">TAILS</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="betButton" class="primary-btn pulse">PLACE BET</button>
+        </div>
+
+        <div id="resultArea" class="result-card hidden">
+          <div class="coin-icon" id="coinIcon">🪙</div>
+          <div class="result-text" id="resultText"></div>
+          <div class="payout-info" id="payoutInfo"></div>
+          <div class="tx-hash" id="txHash"></div>
+        </div>
+
+        <div class="info-section">
+          <p class="hint">Fair & Verifiable • Powered by Rust</p>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
